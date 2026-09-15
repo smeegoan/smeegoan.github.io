@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CardShark Rogue - Twenty-two classic card games against sharp AI, friends nearby, or ranked tables online.">
+    <meta name="keywords" content="card games, hearts, spades, sueca, bridge, rummy, blackjack, poker, multiplayer">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta property="og:title" content="CardShark Rogue">
+    <meta property="og:description" content="Twenty-two classic card games against sharp AI, friends nearby, or ranked tables online.">
+    <meta property="og:image" content="icon.png">
+    <title>CardShark Rogue - A Card Room in Your Pocket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+        
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            display: block;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .description {
+            text-align: center;
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+            color: #666;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="icon.png" alt="CardShark Rogue" class="logo-img">
+            <span class="badge">Coming soon to Google Play</span>
+            <h1>CardShark Rogue</h1>
+            <p class="subtitle">A Card Room in Your Pocket</p>
+        </header>
+
+        <div class="description">
+            <p>Twenty-two classic card games, each played by the rules people actually use, against opponents who know how to play. Climb the ladder, deal a table with friends nearby, or take a seat at a ranked table online.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">22</div>
+                <div class="stat-label">Card Games</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">28</div>
+                <div class="stat-label">Card Decks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">18</div>
+                <div class="stat-label">Ladder Rungs per Game</div>
+            </div>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">🃏</div>
+                <h3>Twenty-Two Games</h3>
+                <p>Hearts, Spades, Sueca, Bisca, Euchre, Whist, Oh Hell!, Belote, King, 500, Bridge, Big Two, Tien Len, Dou Dizhu, Rummy, Cribbage, Blackjack, Hold'em, Teen Patti and more.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🧠</div>
+                <h3>Opponents Worth Beating</h3>
+                <p>Every AI plays its best, every hand: they remember voids, count trumps and read your bids. No difficulty slider.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🪜</div>
+                <h3>The Ladder</h3>
+                <p>Eighteen graded tables per game, each with its own rules, portraits and music. The top rungs give the table a head start.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📡</div>
+                <h3>Play Nearby</h3>
+                <p>Same Wi-Fi or Bluetooth, no account and no server between you and your friends.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>Ranked Online</h3>
+                <p>Public tables with an Elo rating and leaderboard per game, or a private table shared by code. Guest sign-in, no registration.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Make It Yours</h3>
+                <p>Twenty-eight decks and a shelf of table backgrounds, four-colour deck, card wear and tint, sound, haptics and a tutor for every game.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Deal?</h2>
+            <p>Pick a game, pick a table, and see how far up the ladder you get.</p>
+            <span class="cta-button">Coming soon to Google Play</span>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Pedro Cardoso. All rights reserved.</p>
+            <p style="margin-top: 15px;">
+                <a href="index.html">Privacy Policy</a> |
+                <a href="mailto:smeegoan@gmail.com">Contact Support</a> |
+                <a href="../">All Apps</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #999;">
+                Casino games use virtual chips only; nothing can be bought or cashed out. A banner in the lobby and optional rewarded videos support development.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
