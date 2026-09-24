@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CardShark Rogue - Twenty-one classic card games against sharp AI, friends nearby, or ranked tables online.">
+    <meta name="keywords" content="card games, hearts, spades, sueca, bridge, rummy, blackjack, poker, multiplayer">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta property="og:title" content="CardShark Rogue">
+    <meta property="og:description" content="Twenty-one classic card games against sharp AI, friends nearby, or ranked tables online.">
+    <meta property="og:image" content="icon.png">
+    <title>Night of Souls - A Gamebook of Vilar da Serra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #8B2323 0%, #1C1416 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+        
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            display: block;
+        }
+        
+        h1 {
+            color: #8B2323;
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .description {
+            text-align: center;
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #8B2323 0%, #1C1416 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #8B2323;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            color: #8B2323;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+            color: #666;
+        }
+        
+        footer a {
+            color: #8B2323;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #1C1416;
+            text-decoration: underline;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #8B2323;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+            .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 30px 0;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="icon.png" alt="Night of Souls" class="logo-img">
+            <span class="badge">Coming Soon to Google Play</span>
+            <h1>Night of Souls</h1>
+            <p class="subtitle">A Gamebook of Vilar da Serra</p>
+        </header>
+
+        <div class="description">
+            <p>A fallen chestnut blocks the road out of a Portuguese mountain village on the night of the dead. Until the bells stop, you have to live by the village's rules: who to count, who to answer, and which names must never be said aloud.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">422</div>
+                <div class="stat-label">Passages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">212</div>
+                <div class="stat-label">Illustrated Scenes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Endings</div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <img src="shots/p052.jpg" alt="The black dog on the bridge">
+            <img src="shots/p058s.jpg" alt="The mourinhos on the quinta wall, with choices">
+            <img src="shots/p088.jpg" alt="The procession with red lanterns">
+            <img src="shots/p035.jpg" alt="The washerwoman at the river">
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">📖</div>
+                <h3>A Real Gamebook</h3>
+                <p>Choose a path, answer in your own words, keep a journal of the rules you learn. The village remembers what you did.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🕯️</div>
+                <h3>Fear</h3>
+                <p>Every scare raises your fear, and the dead notice who is afraid. Let it climb too high and the night ends without you.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔔</div>
+                <h3>The Bells</h3>
+                <p>The night moves from bell to bell, from nine o'clock to cockcrow, with its own music and sounds at every hour.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🖼️</div>
+                <h3>Living Illustrations</h3>
+                <p>Over two hundred painted scenes that shift with your phone's tilt, with optional old-film styles.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Five Endings</h3>
+                <p>Fifteen achievements and a record of every night you survive, or don't.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>Seven Languages</h3>
+                <p>English, Portuguese, Spanish, French, Arabic, Hindi and Chinese. No ads, no account, fully offline.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>The Bells Are Ringing</h2>
+            <p>Night of Souls is coming soon to Google Play.</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Pedro Cardoso. All rights reserved.</p>
+            <p style="margin-top: 15px;">
+                <a href="index.html">Privacy Policy</a> |
+                <a href="mailto:smeegoan@gmail.com">Contact Support</a> |
+                <a href="../">All Apps</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #999;">
+                A horror story, not written for young children. No ads and no in-app purchases; everything stays on your device.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
