@@ -60,7 +60,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy for CardShark Rogue</h1>
-        <p class="last-updated"><strong>Last Updated:</strong> September 15, 2026</p>
+        <p class="last-updated"><strong>Last Updated:</strong> September 25, 2026</p>
 
         <h2>Introduction</h2>
         <p>CardShark Rogue ("we", "our", or "the app") is a collection of classic card games played against computer opponents, against people nearby, or online. This Privacy Policy explains what information the app handles, where it goes, and how you can remove it.</p>
@@ -80,6 +80,7 @@
 
         <h2>Online Play (Epic Online Services)</h2>
         <p>Online tables and rankings are optional. When you open the online lobby the app signs you in as a guest through Epic Online Services (EOS) using a device-bound identifier; no email, name or Epic account is required. EOS provides the lobby, matchmaking and the peer-to-peer relay that carries card plays between players. EOS receives your IP address and the guest identifier to do this. Epic's policy: <a href="https://www.epicgames.com/site/en-US/privacypolicy" target="_blank">Epic Games Privacy Policy</a>.</p>
+        <p>So that blocking and bans still work after a reinstall, the app also derives a device key: a one-way salted hash of the identifier Android (or Windows) gives this app. The raw identifier never leaves your device, the key cannot be turned back into it, and it is never combined with the advertising ID. Other players at an online table can read the key, and your device uses theirs only to recognise players you have blocked. The block list stays on your device.</p>
 
         <h2>Rankings Service</h2>
         <p>When a public ranked table finishes, each player's app sends the match outcome to our rankings service (hosted on Cloudflare). We store, keyed by the pseudonymous EOS guest identifier:</p>
@@ -87,6 +88,7 @@
             <li>The display name and avatar you chose for the leaderboard (never verified; pick anything)</li>
             <li>Your rating, games played, wins, losses and draws per game</li>
             <li>Match records (participants, seats, placements, rules and seed hashes), kept for 90 days for dispute resolution and then deleted automatically</li>
+            <li>A separately salted device key (see above) linked to your guest identifier, used only for fraud prevention and to enforce bans: a ban applies to every guest identifier seen on the same device. It is deleted after a year without contact, unless a ban is still in force</li>
         </ul>
         <p>The leaderboard shows display names, avatars and ratings to other players. No chat is stored. Private and nearby tables never contact the rankings service.</p>
 
@@ -110,7 +112,7 @@
         <h2 id="data-deletion">Data Deletion</h2>
         <ul>
             <li><strong>Local data:</strong> uninstall the app, or clear its storage in Android settings.</li>
-            <li><strong>Rankings data:</strong> Options &gt; Online &gt; "Erase online data" deletes your ratings and replaces your display name with "Deleted player" on our service immediately. Match records expire on their own within 90 days.</li>
+            <li><strong>Rankings data:</strong> Options &gt; Online &gt; "Erase online data" deletes your ratings and replaces your display name with "Deleted player" on our service immediately, and removes the device key linked to your guest identifier (a banned player cannot erase theirs until the ban ends). Match records expire on their own within 90 days.</li>
             <li><strong>AdMob data:</strong> we hold none of it. Opt out of personalization in Device Settings &gt; Google &gt; Ads, or contact <a href="https://support.google.com/privacy" target="_blank">Google Privacy Support</a>.</li>
             <li><strong>EOS guest identity:</strong> uninstalling the app abandons the device-bound guest identifier; Epic's retention is described in their policy.</li>
         </ul>
