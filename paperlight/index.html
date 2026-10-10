@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Paperlight</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2F5D8A;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            border-bottom: 2px solid #2F5D8A;
+            padding-bottom: 5px;
+        }
+        .last-updated {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        a {
+            color: #2F5D8A;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact {
+            background: #eef4fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy for Paperlight</h1>
+        <p class="last-updated"><strong>Last Updated:</strong> October 10, 2026</p>
+
+        <h2>Introduction</h2>
+        <p>Paperlight ("we", "our", or "the app") is a document and receipt scanner. It keeps your scans on your phone and reads their text on the device. This Privacy Policy explains how the app handles your information.</p>
+
+        <h2>Information We Collect</h2>
+        <p>We do not collect your scans, their text, or any personal information. We run no servers of our own, and there is no account, sign-up or login.</p>
+        <p><strong>Two third-party services are built into the app:</strong></p>
+        <ul>
+            <li><strong>Google AdMob</strong> shows a banner ad and collects the Advertising ID and related data for ad personalization and measurement (details below).</li>
+            <li><strong>Google ML Kit and Google Play services</strong> provide the document scanner and text recognition. They run on your device and never send your images or their text to Google (details below).</li>
+        </ul>
+
+        <h2>Your Scans</h2>
+        <ul>
+            <li>Scanned pages, recognised text, receipt details (merchant, date, amounts, tax ID, payment reference) and document titles are stored only in the app's private storage on your device.</li>
+            <li>The camera is used only while you scan. Google's document scanner (part of Google Play services) captures the pages and hands the finished images to Paperlight. If the scanner isn't available, the app can take a photo with your camera app or import images you pick; it can only read the images you choose.</li>
+            <li>Text recognition and QR code reading (for invoice and payment codes) run on your device.</li>
+            <li>Searchable PDFs, expense spreadsheets and other exports are created on your device and leave it only when you share them yourself, through Android's share menu.</li>
+        </ul>
+
+        <h2>Uploads to Your Own Servers</h2>
+        <p>Paperlight uploads nothing unless you add an upload server in Settings. When you do:</p>
+        <ul>
+            <li>Scans are sent as PDF files directly from your phone to the server you entered (your own Nextcloud, WebDAV or Paperless-ngx server). They never pass through any server of ours.</li>
+            <li>The server address, username and folder are stored in the app's settings on your device. The password or API token is kept in Android's encrypted storage (Android Keystore) and is sent only to that server.</li>
+            <li>What happens to files on your server is governed by that server and whoever runs it.</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+        <h3>Google AdMob</h3>
+        <p>The app displays advertisements through Google AdMob. AdMob may collect certain information for ad personalization and measurement purposes. This may include:</p>
+        <ul>
+            <li>Device identifiers (such as the Android Advertising ID)</li>
+            <li>IP address</li>
+            <li>App usage data related to ad interactions</li>
+        </ul>
+        <p>AdMob does not receive your scans, their text or your receipt details.</p>
+        <p>If you are in the EEA, UK, or Switzerland, the app shows a consent prompt (via Google's User Messaging Platform) before requesting personalized ads, and honors the choice you make there. You can change it later in Settings &rarr; Ad privacy choices.</p>
+        <p>For more information about how Google uses data, please visit: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+        <p>You can opt out of personalized ads by adjusting your device's ad settings.</p>
+
+        <h3>Google ML Kit and Google Play services</h3>
+        <p>The document scanner and its image clean-up run inside Google Play services on your device; Play services may download the scanner the first time you use it. Text recognition runs inside the app. Google states that ML Kit processes images on the device and may contact Google to receive bug fixes and updated models and to send anonymous metrics about how the feature performs. Your images and their text are not sent. See <a href="https://developers.google.com/ml-kit/terms" target="_blank">ML Kit terms</a> and the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+
+        <h2>Data We Do NOT Collect</h2>
+        <ul>
+            <li>Your scans, their text, or the receipt and invoice details read from them</li>
+            <li>Personal information (name, email, phone number)</li>
+            <li>Location data</li>
+            <li>Contacts, or any photos or files you did not pick yourself</li>
+            <li>Payment information</li>
+            <li>Passwords or tokens for your upload servers</li>
+        </ul>
+        <p><strong>Your documents stay on your device, or go only to servers you add and control.</strong></p>
+
+        <h2>Children's Privacy</h2>
+        <p>Paperlight is a general productivity tool and is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+        <h2>Data Security and Encryption</h2>
+        <ul>
+            <li>Scans are kept in the app's private storage, which other apps cannot read.</li>
+            <li>Upload passwords and tokens are encrypted with Android Keystore.</li>
+            <li>Uploads use HTTPS when your server address starts with https://. The app also accepts http:// addresses for servers on your home network; traffic to those is not encrypted, so use them only on networks you trust.</li>
+            <li>Data exchanged with AdMob and Google Play services is encrypted in transit using HTTPS.</li>
+        </ul>
+
+        <h2 id="data-deletion">Data Deletion</h2>
+        <p><strong>Your scans and settings:</strong> You can delete them at any time by:</p>
+        <ul>
+            <li>Opening a scan &rarr; menu &rarr; Delete, which removes its pages, text and receipt details</li>
+            <li>Settings &rarr; an upload server &rarr; Delete server, which removes its address, username and stored password or token</li>
+            <li>Uninstalling the app, which removes everything it stored on your device</li>
+        </ul>
+        <p><strong>Files already uploaded to your own server</strong> stay there until you delete them on that server.</p>
+        <p><strong>Data Collected by Google (AdMob):</strong> We do not store any of your data on our servers and cannot delete data collected by Google. To manage this data:</p>
+        <ul>
+            <li><strong>Stop future collection:</strong> Uninstall the app</li>
+            <li><strong>Opt out of personalized ads:</strong> Device Settings &rarr; Google &rarr; Ads &rarr; Opt out of Ads Personalization</li>
+            <li><strong>Request deletion:</strong> Contact Google directly at <a href="https://support.google.com/privacy" target="_blank">Google Privacy Support</a></li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access your data (stored on your device, and on any server you added)</li>
+            <li>Delete your data (in the app, or by uninstalling)</li>
+            <li>Opt out of personalized ads (via the app's Settings or your device settings)</li>
+        </ul>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page. The "Last Updated" date at the top indicates when this policy was last revised.</p>
+
+        <h2>Contact Us</h2>
+        <div class="contact">
+            <p>If you have questions about this Privacy Policy, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:smeegoan@gmail.com">smeegoan@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
