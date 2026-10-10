@@ -60,7 +60,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy for CardShark Rogue</h1>
-        <p class="last-updated"><strong>Last Updated:</strong> September 25, 2026</p>
+        <p class="last-updated"><strong>Last Updated:</strong> October 10, 2026</p>
 
         <h2>Introduction</h2>
         <p>CardShark Rogue ("we", "our", or "the app") is a collection of classic card games played against computer opponents, against people nearby, or online. This Privacy Policy explains what information the app handles, where it goes, and how you can remove it.</p>
@@ -69,7 +69,7 @@
         <p>Game progress (ladder rungs, achievements, statistics, unlocked decks and backgrounds), your settings and your saved matches are stored locally on your device. Nothing in this category is sent to our servers. There is no account, sign-up or login to play offline.</p>
 
         <h2>Advertising (Google AdMob)</h2>
-        <p>The Android version is free and shows advertisements through Google AdMob: a banner on the Ladder screen and in the nearby and online lobbies while you wait for other players, and an optional rewarded video you can choose to watch in Options to unlock a card deck or table background. AdMob may collect the following automatically for ad delivery, personalization and measurement:</p>
+        <p>The Android version is free and shows advertisements through Google AdMob: a banner on the game list, the Ladder screen and the nearby and online lobbies while you wait for other players, and an optional rewarded video you can choose to watch in Options to unlock a card deck or table background. AdMob may collect the following automatically for ad delivery, personalization and measurement:</p>
         <ul>
             <li>Device identifiers (such as the Android Advertising ID)</li>
             <li>IP address and coarse location derived from it</li>
@@ -80,7 +80,7 @@
 
         <h2>Online Play (Epic Online Services)</h2>
         <p>Online tables and rankings are optional. When you open the online lobby the app signs you in as a guest through Epic Online Services (EOS) using a device-bound identifier; no email, name or Epic account is required. EOS provides the lobby, matchmaking and the peer-to-peer relay that carries card plays between players. EOS receives your IP address and the guest identifier to do this. Epic's policy: <a href="https://www.epicgames.com/site/en-US/privacypolicy" target="_blank">Epic Games Privacy Policy</a>.</p>
-        <p>So that blocking and bans still work after a reinstall, the app also derives a device key: a one-way salted hash of the identifier Android (or Windows) gives this app. The raw identifier never leaves your device, the key cannot be turned back into it, and it is never combined with the advertising ID. Other players at an online table can read the key, and your device uses theirs only to recognise players you have blocked. The block list stays on your device.</p>
+        <p>So that blocking and bans still work after a reinstall, the app also derives a device key: a one-way salted hash of the identifier Android, Windows or Linux gives this app. The raw identifier never leaves your device, the key cannot be turned back into it, and it is never combined with the advertising ID. Other players at an online table can read the key, and your device uses theirs only to recognise players you have blocked. The block list stays on your device.</p>
 
         <h2>Rankings Service</h2>
         <p>When a public ranked table finishes, each player's app sends the match outcome to our rankings service (hosted on Cloudflare). We store, keyed by the pseudonymous EOS guest identifier:</p>
@@ -91,29 +91,41 @@
             <li>A separately salted device key (see above) linked to your guest identifier, used only for fraud prevention and to enforce bans: a ban applies to every guest identifier seen on the same device. It is deleted after a year without contact, unless a ban is still in force</li>
         </ul>
         <p>The leaderboard shows display names, avatars and ratings to other players. No chat is stored. Private and nearby tables never contact the rankings service.</p>
+        <p><strong>Reporting a player:</strong> if you use Report in an online lobby, the service stores your guest identifier, the reported player's, the table and game, and the reason you picked. Reports are used only to review abuse and are deleted automatically after 90 days.</p>
+
+        <h2>Desktop Version (itch.io)</h2>
+        <p>The Windows and Linux version is sold on itch.io and shows no ads. itch.io handles the payment; we never see your card or payment details. To unlock the game, it asks our licence service (hosted on Cloudflare) to confirm your purchase with itch.io. You prove the purchase in one of three ways: signing in through the itch app, entering your purchase email, or entering your download key. That proof is passed to itch.io only to confirm the purchase, and the email address and download key themselves are never stored. We store:</p>
+        <ul>
+            <li>The itch.io purchase identifier</li>
+            <li>A machine identifier: a one-way hash of the identifier your computer gives the game, so one purchase can be used on up to 5 machines</li>
+            <li>Your itch.io user number, if you signed in through the itch app, or a one-way hash of your purchase email, if you used email</li>
+            <li>When the licence was first and last checked</li>
+        </ul>
+        <p>To stop abuse, the service also counts verification attempts per IP address; those counts are deleted after a day.</p>
 
         <h2>Nearby Play (Wi-Fi and Bluetooth)</h2>
         <p>Nearby tables connect devices directly over the local Wi-Fi network or Bluetooth Low Energy. The app asks for Bluetooth permissions, and on some Android versions the location permission that Android requires for Bluetooth scanning. The app does not read, store or transmit your location. Nearby play involves no server.</p>
 
         <h2>Data We Do NOT Collect</h2>
         <ul>
-            <li>Name, email address or phone number</li>
+            <li>Name, email address or phone number (the desktop version keeps only a one-way hash of a purchase email, as described above)</li>
             <li>Precise location</li>
             <li>Contacts, photos, files or calendar</li>
-            <li>Payment information (the app has no purchases)</li>
+            <li>Payment information (the Android version has no purchases; desktop purchases are handled entirely by itch.io)</li>
         </ul>
 
         <h2>Children's Privacy</h2>
         <p>CardShark Rogue includes simulated casino games (Blackjack, poker variants) played with virtual chips and no real money. It is intended for adults and is not directed at children under 13. We do not knowingly collect personal information from children.</p>
 
         <h2>Data Security</h2>
-        <p>All traffic between the app and AdMob, Epic Online Services and the rankings service is encrypted in transit with HTTPS or the EOS transport encryption.</p>
+        <p>All traffic between the app and AdMob, Epic Online Services, the rankings service and the licence service is encrypted in transit with HTTPS or the EOS transport encryption.</p>
 
         <h2 id="data-deletion">Data Deletion</h2>
         <ul>
             <li><strong>Local data:</strong> uninstall the app, or clear its storage in Android settings.</li>
             <li><strong>Rankings data:</strong> Options &gt; Online &gt; "Erase online data" deletes your ratings and replaces your display name with "Deleted player" on our service immediately, and removes the device key linked to your guest identifier (a banned player cannot erase theirs until the ban ends). Match records expire on their own within 90 days.</li>
             <li><strong>AdMob data:</strong> we hold none of it. Opt out of personalization in Device Settings &gt; Google &gt; Ads, or contact <a href="https://support.google.com/privacy" target="_blank">Google Privacy Support</a>.</li>
+            <li><strong>Desktop licence:</strong> write to the address below to have your licence records deleted. The game will then ask you to verify your purchase again on its next start.</li>
             <li><strong>EOS guest identity:</strong> uninstalling the app abandons the device-bound guest identifier; Epic's retention is described in their policy.</li>
         </ul>
 
