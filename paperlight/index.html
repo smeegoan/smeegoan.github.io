@@ -77,15 +77,19 @@
         <h2>Your Scans</h2>
         <ul>
             <li>Scanned pages, recognised text, receipt details (merchant, date, amounts, tax ID, payment reference) and document titles are stored only in the app's private storage on your device.</li>
-            <li>The camera is used only while you scan. Google's document scanner (part of Google Play services) captures the pages and hands the finished images to Paperlight. If the scanner isn't available, the app can take a photo with your camera app or import images you pick; it can only read the images you choose.</li>
+            <li>The camera is used only while you scan. Google's document scanner (part of Google Play services) captures the pages and hands the finished images to Paperlight. If the scanner isn't available, the app can take a photo with your camera app. You can also import images or PDFs you pick, or share them to Paperlight from another app; it can only read the files you choose.</li>
+            <li>Page edits (rotate, crop, enhance, grayscale, black and white) are applied on your device.</li>
             <li>Text recognition and QR code reading (for invoice and payment codes) run on your device.</li>
             <li>Searchable PDFs, expense spreadsheets and other exports are created on your device and leave it only when you share them yourself, through Android's share menu.</li>
+            <li>Settings &rarr; Back up library creates one zip file of your scans on your device and opens the share menu, so you decide where it goes. Server passwords and tokens are never included. Restoring reads only the backup file you pick.</li>
         </ul>
 
         <h2>Uploads to Your Own Servers</h2>
         <p>Paperlight uploads nothing unless you add an upload server in Settings. When you do:</p>
         <ul>
-            <li>Scans are sent as PDF files directly from your phone to the server you entered (your own Nextcloud, WebDAV or Paperless-ngx server). They never pass through any server of ours.</li>
+            <li>Scans are sent as PDF files directly from your phone to the server you entered (your own Nextcloud, ownCloud, WebDAV or Paperless-ngx server). They never pass through any server of ours.</li>
+            <li>With a Firefly III server, a receipt's details (merchant, date, amount and the scan's title, plus the account name you entered) are sent to your Firefly III to record the expense, with the receipt PDF attached.</li>
+            <li>With an Email destination, Paperlight opens your own email app with the PDF attached and the address you entered; you review and send the message there. Paperlight never sends email itself.</li>
             <li>The server address, username and folder are stored in the app's settings on your device. The password or API token is kept in Android's encrypted storage (Android Keystore) and is sent only to that server.</li>
             <li>What happens to files on your server is governed by that server and whoever runs it.</li>
         </ul>
@@ -131,11 +135,11 @@
         <h2 id="data-deletion">Data Deletion</h2>
         <p><strong>Your scans and settings:</strong> You can delete them at any time by:</p>
         <ul>
-            <li>Opening a scan &rarr; menu &rarr; Delete, which removes its pages, text and receipt details</li>
+            <li>Opening a scan &rarr; menu &rarr; Delete, which removes its pages, text and receipt details (Undo is offered for a few seconds, then the scan is gone)</li>
             <li>Settings &rarr; an upload server &rarr; Delete server, which removes its address, username and stored password or token</li>
             <li>Uninstalling the app, which removes everything it stored on your device</li>
         </ul>
-        <p><strong>Files already uploaded to your own server</strong> stay there until you delete them on that server.</p>
+        <p><strong>Files already uploaded to your own server</strong>, emails you sent and backup files you saved elsewhere stay there until you delete them yourself.</p>
         <p><strong>Data Collected by Google (AdMob):</strong> We do not store any of your data on our servers and cannot delete data collected by Google. To manage this data:</p>
         <ul>
             <li><strong>Stop future collection:</strong> Uninstall the app</li>
